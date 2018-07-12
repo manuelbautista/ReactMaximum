@@ -1,0 +1,78 @@
+https://github.com/facebook/create-react-app
+
+npm install create-react-app -g   --> para crear proyectos en reactJS
+
+create-react-app react-complete-guide  --> estar conectado por cable no wireless
+tambien corri esto pero creo que no es necesario:
+npm cache --force clean
+y el nodejs como administrador
+
+npm run eject --> para poder poner las clases como modulos
+
+en el webpack.config.dev:
+test: /\.css$/,
+            use: [
+              require.resolve('style-loader'),
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  modules: true,
+                  localIdentName: '[name]_[local]_[hash:base64:5]'
+                },
+              },
+			  
+En el webpack.config.prod:
+          {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract(
+              Object.assign(
+                {
+                  fallback: {
+                    loader: require.resolve('style-loader'),
+                    options: {
+                      hmr: false,
+                    },
+                  },
+                  use: [
+                    {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                        importLoaders: 1,
+                        minimize: true,
+                        sourceMap: shouldUseSourceMap,
+                        modules: true,
+                        localIdentName: '[name]__[local]__[hash:base64:5]'
+                      },
+                    },
+					
+
+INSTALAR RADIUM
+npm install --save  radium
+
+If your project uses React 16.2, you can now use a built-in "Aux" component - a so called fragment.
+
+It's actually not called Aux  but you simply use <>  - an empty JSX tag.
+
+So the following code
+
+<Aux>
+    <h1>First Element</h1>
+    <h1>Second Element</h1>
+</Aux>
+becomes
+
+<>
+    <h1>First Element</h1>
+    <h1>Second Element</h1>
+</>
+Behind the scenes, it does the same our Aux  component did.
+
+paquete para validar los props
+npm install --save prop-types
+
+Instalar Axios
+npm install axios --save
+
+INSTALAR ROUTER
+npm  install --save react-router react-router-dom
